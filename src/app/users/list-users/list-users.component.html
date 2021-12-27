@@ -1,0 +1,76 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <label style="font-size: x-large;" class="card-title">Users</label>
+                        <button class="btn btn-danger float-right" (click)="addUser()"><i class="material-icons">person_add_alt</i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        E-mail
+                                    </th>
+                                    <th>
+                                        Created
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of users">
+                                        <td>
+                                            {{user._id}}
+                                        </td>
+                                        <td>
+                                            {{user.user_email}}
+                                        </td>
+                                        <td>
+                                            {{user.user_created}}
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-secondary mr-3" (click)="editUser(user)">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal" (click)="selectUser(user)">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="DeleteModalLabel"><strong>Delete</strong></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            you want to delete
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">NO</button>
+          <button type="button" class="btn btn-success" (click)="deleteUser()" data-dismiss="modal">YES</button>
+        </div>
+      </div>
+    </div>
+  </div>

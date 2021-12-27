@@ -1,0 +1,34 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title text-center">Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email address" [(ngModel)]="loginInfo.user_email">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput [type]="'password'" placeholder="Password" [(ngModel)]="loginInfo.user_password">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <button mat-raised-button type="button" class="btn btn-danger pull-right" (click)="login()">
+                            <span class="material-icons mr-2">login</span>
+                            Login
+                        </button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</div>
